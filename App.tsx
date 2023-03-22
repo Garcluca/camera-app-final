@@ -11,7 +11,7 @@ export default function App() {
   const [flashMode, setFlashMode] = React.useState('off')
 
   const __startCamera = async () => {
-    const {status} = await Camera.requestPermissionsAsync()
+    const {status} = await Camera.requestCameraPermissionsAsync()
     console.log(status)
     if (status === 'granted') {
       setStartCamera(true)
@@ -89,7 +89,7 @@ export default function App() {
                     onPress={__handleFlashMode}
                     style={{
                       backgroundColor: flashMode === 'off' ? '#000' : '#fff',
-                      borderRadius: '50%',
+                      borderRadius: .5,
                       height: 25,
                       width: 25
                     }}
@@ -106,7 +106,7 @@ export default function App() {
                     onPress={__switchCamera}
                     style={{
                       marginTop: 20,
-                      borderRadius: '50%',
+                      borderRadius: .5,
                       height: 25,
                       width: 25
                     }}
@@ -144,7 +144,7 @@ export default function App() {
                         width: 70,
                         height: 70,
                         bottom: 0,
-                        borderRadius: 50,
+                        borderRadius: .5,
                         backgroundColor: '#fff'
                       }}
                     />

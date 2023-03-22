@@ -12,7 +12,7 @@ export default function App() {
   let camera: Camera
   useEffect(() => {
     ;(async () => {
-      const {status} = await Camera.requestPermissionsAsync()
+      const {status} = await Camera.requestCameraPermissionsAsync()
       setHasPermission(status === 'granted')
     })()
   }, [])
